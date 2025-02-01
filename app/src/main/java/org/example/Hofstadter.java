@@ -1,11 +1,13 @@
 package org.example;
 
 public class Hofstadter {
-  // Your implementation of the sequence goes here.
-  // Recall that you can calculate the nth term, G(n), using:
-  // G(n) = n - G(G(n-1))
-  // G(0) = 0
+  // Recursive implementation of the Hofstadter G sequence
   public Integer gSequence(Integer index) {
-    return 0;
+    // Base case: G(0) = 0
+    if (index == 0) {
+      return 0;
+    }
+    // Recursive case: G(n) = n - G(G(n-1))
+    return index - gSequence(gSequence(index - 1));
   }
 }
